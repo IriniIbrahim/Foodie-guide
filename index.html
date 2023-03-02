@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			rel="stylesheet"
+			href="Style.css"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Foodie Guide</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				<a name="top"></a>
+				<div class="Positioning">
+					<a href="#top"
+						><img
+							src="Media/burger.png"
+							alt="UP"
+					/></a>
+				</div>
+				<div>
+					<div class="logo" id="logo">
+						<img
+							src="Media/cutlery.png"
+						/>
+					</div>
+					<div
+						class="logo"
+						style="margin-left: 30px"
+					>
+						<h1>Foodie Guide</h1>
+						<h4>
+							Which foodie are you?
+						</h4>
+					</div>
+				</div>
+			</header>
+			<section class="sectionButtons">
+				<div
+					class="buttons"
+					style="margin-left: 30px"
+				>
+					<a
+						class="button"
+						href="#formdesign"
+						>Are you a real foodie?</a
+					>
+					<a
+						class="button"
+						href="#randommeal"
+						>What to cook for dinner?</a
+					>
+					<a
+						class="button"
+						href="#todolistsection"
+						>What to buy?</a
+					>
+				</div>
+			</section>
+			<section
+				class="formdesign"
+				id="formdesign"
+			>
+				<div class="formdiv">
+					<form
+						id="usernameform"
+						class="usernameform"
+					>
+						<h1>
+							Enter your name To start
+							the quiz
+						</h1>
+						<input name="name" class="textbox" />
+						<button
+							type="submit"
+							class="button"
+						>
+							Submit
+						</button>
+					</form>
+				</div>
+				<div id="log" class="log"></div>
+				<div class="icecreamdiv">
+					<img
+						src="media/interesting-facts-about-pasta.jpg"
+						width="378px"
+						height="410px"
+					/>
+				</div>
+			</section>
+			<section
+				class="sectionquiz"
+				id="sectionquiz"
+			>
+				<div class="gameparstyle">
+					<div
+						class="GamebtnContainer"
+						id="GamebtnContainer"
+					>
+						<h1
+							id="welcoming"
+							class="welcoming"
+						></h1>
+						<button
+							class="button"
+							id="StartGame"
+						>
+							Start Game
+						</button>
+					</div>
+					<div
+						class="quiz-container"
+						id="quiz-container"
+					>
+						<div class="quiz-header">
+							<h2
+								id="Progressbar"
+								class="Progress"
+							></h2>
+							<h3
+								id="question"
+								class="question"
+							>
+								Question Text
+							</h3>
+							<ul class="ulgame">
+								<li class="ligame">
+									<input
+										type="radio"
+										name="answer"
+										id="a"
+										class="answer"
+									/>
+									<label
+										for="a"
+										id="a_text"
+										class="labelgame"
+										>Answer</label
+									>
+								</li>
+								<li class="ligame">
+									<input
+										type="radio"
+										name="answer"
+										id="b"
+										class="answer"
+									/>
+									<label
+										for="b"
+										id="b_text"
+										class="labelgame"
+										>Answer</label
+									>
+								</li>
+								<li class="ligame">
+									<input
+										type="radio"
+										name="answer"
+										id="c"
+										class="answer"
+									/>
+									<label
+										for="c"
+										id="c_text"
+										class="labelgame"
+										>Answer</label
+									>
+								</li>
+								<li class="ligame">
+									<input
+										type="radio"
+										name="answer"
+										id="d"
+										class="answer"
+									/>
+									<label
+										for="d"
+										id="d_text"
+										class="labelgame"
+										>Answer</label
+									>
+								</li>
+							</ul>
+						</div>
+						<button
+							id="Done"
+							class="button"
+						>
+							Done
+						</button>
+					</div>
+				<h1 id="timer" class="timer"></h1>
+			</section>
+		</div>
+		<section
+			id="randommeal"
+			class="randommeal"
+		>
+			<button
+				id="randombtn"
+				class="button"
+			>
+				Meal Suggestions
+			</button>
+			<h1
+				id="headertext"
+				class="headertext"
+			></h1>
+			<div class="detailsimgwrap">
+				<img id="img" class="imgpos" />
+				<div class="detailswrap">
+					<h3
+						id="category"
+						class="h3class"
+					></h3>
+					<h3
+						id="area"
+						class="h3class"
+					></h3>
+					<p
+						class="h3class"
+						id="h3class"
+					></p>
+				</div>
+			</div>
+		</section>
+		<section class="todoliststyle"id="todolistsection">
+			<div class="todocontainer">
+				<h1>Shopping List</h1>
+			 <ul id="todoList"></ul>
+    <form id="todoForm">
+      <input name="todo" class="textbox"/>
+      <button type="submit" class="button">Add</button>
+    </form>
+		</div>
+			</section>
+		<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore-compat.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

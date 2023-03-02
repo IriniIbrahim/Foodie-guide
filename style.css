@@ -1,0 +1,277 @@
+* {
+	padding: 2;
+	margin: 1;
+	box-sizing: border-box;
+}
+body {
+	background-color: black;
+	font-family: "Lucida Console",
+		"Courier New", monospace;
+	color: white;
+}
+
+div {
+	text-align: center;
+}
+
+.wrapper {
+	position: relative;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.logo {
+	color: white;
+	display: inline-block;
+	font-family: "Orbitron", sans-serif;
+}
+.sectionButtons {
+	background-image: url("Media/pizzajpg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+
+	border-radius: 10px;
+	height: 79vh;
+}
+.sectionquiz {
+	background-image: url("Media/strawberry.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	border-radius: 10px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.sectionAPI {
+	background-color: white;
+	border-radius: 10px;
+	height: 90vh;
+}
+.quiz {
+	background-color: #0000006b;
+	color: white;
+	height: 100vh;
+}
+.buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75vh;
+}
+
+.button {
+	padding: 1rem;
+	border-radius: 1rem;
+	text-transform: uppercase;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.407
+	);
+	border: 2px solid #fff;
+	color: #fff;
+	font-weight: bold;
+	margin: 0.5rem;
+	text-decoration: none;
+	text-align: center;
+}
+
+.button:hover {
+	background-color: #ffffff;
+	color: #000;
+}
+.buttonremove {
+	border-radius: 2rem;
+	text-transform: uppercase;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.407
+	);
+	border: 2px solid #fff;
+	color: #fff;
+	font-weight: bold;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding-left: 100px;
+}
+.buttonremove:hover {
+	background-color: #ffffff;
+	color: #000;
+}
+.formdesign {
+	border-radius: 10px;
+	justify-content: left;
+	align-items: start;
+	height: 100vh;
+	display: flex;
+	padding: 50px;
+}
+.icecreamdiv {
+	padding-top: 260px;
+	flex: 3;
+}
+.formdiv {
+	text-align: left;
+	border: 1px groove white;
+	border-radius: 5px;
+	padding: 15px;
+	flex: 1;
+	/* margin-left: 50px; */
+	align-items: start;
+	justify-items: left;
+}
+.log {
+	flex: 2;
+	/* margin-left: 200px; */
+	border: 1px groove white;
+	padding: 15px;
+	border-radius: 5px;
+	align-items: start;
+	justify-items: left;
+}
+.usernameform {
+	width: 500px;
+}
+
+.tablelog {
+	width: 500px;
+}
+td {
+	text-align: left;
+	vertical-align: top;
+}
+.textbox {
+	background-color: #222222c1;
+	border: 2px solid white;
+	font-size: larger;
+	padding: 0.5rem;
+	color: white;
+}
+
+.Positioning {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+}
+
+.quiz-header {
+	padding: 1rem;
+}
+.question {
+	padding: 3rem;
+	text-align: left;
+	margin: 0;
+	background-color: #0707078c;
+}
+.ulgame {
+	list-style-type: none;
+	padding: 1;
+	text-align: left;
+}
+.ligame {
+	font-size: 1.2rem;
+	margin: 1rem 0;
+	text-align: left;
+}
+.labelgame {
+	cursor: pointer;
+}
+.h3class {
+	flex: 2;
+	text-align: left;
+}
+.detailsimgwrap {
+	width: 100%;
+	height: 640px;
+}
+.imgpos {
+	float: left;
+	width: 30%;
+	width: 500px;
+	height: auto;
+	margin: 1rem;
+}
+.headertext {
+	text-align: left;
+	padding-left: 2rem;
+}
+
+.detailswrap {
+	float: right;
+	width: 60%;
+	margin: 1rem;
+}
+.result {
+	padding-top: 50px;
+}
+/*
+.gameparstyle {
+	padding-top: 150px;
+} */
+.GamebtnContainer {
+	height: 100vh;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.GamebtnContainer--active {
+	display: none;
+}
+.quiz-container {
+	display: block;
+	background-color: #222222c1;
+	border-radius: 10px;
+	width: 1400px;
+	display: none;
+}
+
+.quiz-container--active {
+	display: block;
+	background-color: #222222c1;
+	border-radius: 10px;
+	width: 1400px;
+}
+.welcoming {
+	align-items: start;
+	justify-items: center;
+	background-color: #222222c1;
+	padding: 20px;
+	border-radius: 10px;
+}
+.timer {
+	background-color: #222222c1;
+}
+
+.todoliststyle {
+	background-image: url("Media/todo.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.todocontainer {
+	display: block;
+	background-color: #222222c1;
+	border-radius: 10px;
+	width: 1300px;
+	text-align: left;
+	padding: 50px;
+	align-items: center;
+	height: auto;
+}
