@@ -1,4 +1,53 @@
 "use strict";
+
+
+//Form functions
+const firebaseConfig = {
+	apiKey: "AIzaSyBXutnWihtBg8D5QGRzW46al-yw5_iNPCQ",
+	authDomain: "foodieguide-80084.firebaseapp.com",
+	projectId: "foodieguide-80084",
+	storageBucket: "foodieguide-80084.appspot.com",
+	messagingSenderId: "232696757243",
+	appId: "1:232696757243:web:a13695a99932f141c5e95e"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+
+const LogsEL = document.getElementById("log");
+const usernameformEL = document.getElementById("usernameform");
+
+
+db.collection("logs").orderBy("created", "desc").onSnapshot(function (snapshot) {
+	renderposts(snapshot.docs);
+});
+
+usernameformEL.onsubmit = async function (event) {
+	event.preventDefault();
+	const nameInput = usernameformEL.elements.name;
+	await db.collection('logs').add({
+		name: nameInput.value,
+		created: Date.now(),
+	});
+	window.location.href = "#sectionquiz";
+	const welcoming = document.getElementById("welcoming");
+	welcoming.innerHTML = `Welcome ${nameInput.value}`;
+	nameInput.value = "";
+};
+
+function renderposts(logs) {
+	LogsEL.innerHTML = `<h1 style="text-align: left">Users Logins </h1>`;
+	for (let log of logs) {
+		const data = log.data();
+		const LogEL = document.createElement("div");
+		LogEL.innerHTML = `<table class="tablelog"><tr><td>Username:</td><td>${data.name}</td></tr><tr><td>last login:</td><td>${new Date(data.created).toLocaleString()}</td></tr></table> `;
+		LogsEL.append(LogEL);
+	}
+
+}
+
+//Game Functions
 function hidestart() {
 	let GamebtnContainer = document.getElementById("GamebtnContainer");
 	GamebtnContainer.classList.toggle("GamebtnContainer--active");
@@ -69,6 +118,7 @@ const quizData = [
 		correct: "a",
 	},
 ];
+
 const quiz = document.getElementById('quiz-container');
 const progressEL = document.getElementById('Progressbar');
 const answerEls = document.querySelectorAll('.answer');
@@ -158,7 +208,7 @@ DoneBtn.addEventListener('click', () => {
 	}
 });
 
-
+//API Functions
 const getbtn = document.getElementById("randombtn");
 getbtn.onclick = async function getData() {
 	const res = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
@@ -173,55 +223,10 @@ getbtn.onclick = async function getData() {
 	h3category.innerHTML = `Category: ${data.meals[0].strCategory}`;
 	const h3area = document.getElementById("area");
 	h3area.innerHTML = `Origin: ${data.meals[0].strArea}`;
-	//h3area.innerHTML = data.meals[0].strArea;
 }
 
 
-const firebaseConfig = {
-	apiKey: "AIzaSyBXutnWihtBg8D5QGRzW46al-yw5_iNPCQ",
-	authDomain: "foodieguide-80084.firebaseapp.com",
-	projectId: "foodieguide-80084",
-	storageBucket: "foodieguide-80084.appspot.com",
-	messagingSenderId: "232696757243",
-	appId: "1:232696757243:web:a13695a99932f141c5e95e"
-};
-
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-
-const LogsEL = document.getElementById("log");
-const usernameformEL = document.getElementById("usernameform");
-
-
-db.collection("logs").orderBy("created", "desc").onSnapshot(function (snapshot) {
-	renderposts(snapshot.docs);
-});
-
-usernameformEL.onsubmit = async function (event) {
-	event.preventDefault();
-	const nameInput = usernameformEL.elements.name;
-	await db.collection('logs').add({
-		name: nameInput.value,
-		created: Date.now(),
-	});
-	window.location.href = "#sectionquiz";
-	const welcoming = document.getElementById("welcoming");
-	welcoming.innerHTML = `Welcome ${nameInput.value}`;
-	nameInput.value = "";
-};
-
-function renderposts(logs) {
-	LogsEL.innerHTML = `<h1 style="text-align: left">Users Logins </h1>`;
-	for (let log of logs) {
-		const data = log.data();
-		const LogEL = document.createElement("div");
-		LogEL.innerHTML = `<table class="tablelog"><tr><td>Username:</td><td>${data.name}</td></tr><tr><td>last login:</td><td>${new Date(data.created).toLocaleString()}</td></tr></table> `;
-		LogsEL.append(LogEL);
-	}
-
-}
-
+//Todo List
 const todoListEl = document.getElementById("todoList");
 const todoFormEl = document.getElementById("todoForm");
 
